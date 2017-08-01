@@ -38,7 +38,7 @@ Following this, simply enable the rex and rex::params classes on the host[s] or 
 
 **Note:** If you plan to use a user other than root, you must configure the `remote_execution_ssh_user` found in the Remote Execution portion of the Settings menu.
 
-### What rex affects **OPTIONAL**
+### What rex affects
 
 This module will creat the REX user, if it is not already present and will manage this users password.  It will deploy sudo rules to /etc/sudoers.d/rex.  Finally, it will deploy the required ssh keys.
 
@@ -54,7 +54,7 @@ This module will creat the REX user, if it is not already present and will manag
 * this module will house the users encrypted password in the UI
 * this module could cause unexpected security risks, if not properly configured
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 The `hash_resources` module must be installed for this module to function correctly.  Additionally, if the desired ssh user for REX is not root, this must be configured prior to enableing this module.
 
@@ -79,7 +79,7 @@ This module will not work with external users for REX ssh user.
 
 Contributions welcome!
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes/Contributors/Etc.
 
 **Author:** Roy Williams (chopskxw)
 
