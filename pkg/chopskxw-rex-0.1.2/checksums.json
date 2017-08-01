@@ -8,7 +8,7 @@
   "manifests/ssh_keys.pp": "e733aea62c6e361d3885db8583e110d0",
   "manifests/sudoers.pp": "3448618b85cd66eb017991194b6202c1",
   "manifests/user.pp": "7e1c6e2a84641101f55f31caa4063e3e",
-  "metadata.json": "8755878a8ad5ec79af991f99eabc830b",
+  "metadata.json": "64abb73e4729d4813a484f312e94bbae",
   "spec/classes/init_spec.rb": "b0f2dab254b1890064fb945c59b63cc0",
   "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
   "templates/rex_sudoers.erb": "5759da53b861e35136ba90a7ee299d31"
