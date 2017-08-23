@@ -7,7 +7,8 @@ class rex::params (
   $rex_pw_max = '99999',
   $rex_pw_min = '0',
   $rex_comment = 'REX user for Satellite/Foreman',
-  $resources = {},
+  $rex_keys = {},
+  $rex_dir = '/var/tmp',
 ) {
 }
 

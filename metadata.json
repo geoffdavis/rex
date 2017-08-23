@@ -1,6 +1,6 @@
 {
   "name": "chopskxw-rex",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Roy Williams",
   "summary": "Module used to deploy REX user for Satellite 6/Foreman",
   "license": "Apache-2.0",

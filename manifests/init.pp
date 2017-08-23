@@ -14,5 +14,6 @@ class rex (
 
   include rex::sudoers
   include rex::ssh_keys
+  include rex::mntopts
 
 }

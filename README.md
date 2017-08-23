@@ -87,3 +87,4 @@ Contributions welcome!
 0.1.0 - initial dev release
 0.1.1 - syntax fixes, etc.
 0.1.2 - syntax fixes
+0.2.0 - Removed !requiretty from sudo rule, and created manifest to check working dir mount options
