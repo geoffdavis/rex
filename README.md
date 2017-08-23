@@ -22,7 +22,7 @@ Import module and publish/promote to appropriate CV/LCE.  Configure overrides ov
 
 ```
 rex_user = <%= @host.params['remote_execution_ssh_user'] %>
-resources = 
+rex_keys = 
 ---
 ssh_authorized_key:
   <% for _key in @host.params['remote_execution_ssh_keys'] do -%>
@@ -61,7 +61,7 @@ The `hash_resources` module must be installed for this module to function correc
 ### Beginning with rex
 
 * import the module
-* configure override for resources
+* configure override for rex_keys
 * enable module
 
 ## Usage
