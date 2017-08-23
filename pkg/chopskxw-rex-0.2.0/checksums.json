@@ -1,0 +1,16 @@
+{
+  "Gemfile": "36c376f27539ded2a321b2bd432e843b",
+  "README.md": "a406b4a3b78b5b67b04464777f0b1ff2",
+  "Rakefile": "f4692851f7e9afcdb02721319e3f18b9",
+  "examples/init.pp": "691a65a055e343e43eaf6c0d2938ff81",
+  "manifests/init.pp": "648fa0b7b9e3436903810d7f9401717f",
+  "manifests/mntopts.pp": "4f2d2285fe2e5c36bf54714d2bfc7fbc",
+  "manifests/params.pp": "474a9d655086beabbdb41b73126e53ef",
+  "manifests/ssh_keys.pp": "912e0dd85bc44d0098c572c1afc0fb42",
+  "manifests/sudoers.pp": "3448618b85cd66eb017991194b6202c1",
+  "manifests/user.pp": "7e1c6e2a84641101f55f31caa4063e3e",
+  "metadata.json": "763733b8e7b07fa3c2f9200f0c137a4e",
+  "spec/classes/init_spec.rb": "b0f2dab254b1890064fb945c59b63cc0",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "templates/rex_sudoers.erb": "fe2675e16739135178d21d4abd19ded2"
+}
