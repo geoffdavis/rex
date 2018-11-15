@@ -1,21 +1,23 @@
 #This  assumes that the satellite/foreman settings are configured for the correct
 #remote execution user.
-#
-# The following must be configured as an override for the rex_keys parameter
-#---
-#  ssh_authorized_key:
-#    <% for _key in @host.params['remote_execution_ssh_keys'] do -%>
-#    <% key = _key.split(' ') -%>
-#    <%= key[2] %>:
-#    user: <%= @host.params['remote_execution_ssh_user'] %>
-#    type: <%= key[0] %>
-#    key: <%= key[1] %>
-#    <% end -%>
 
 class rex::ssh_keys(
-  $rex_keys = $rex::params::rex_keys,
+  $rex_user  = $rex::params::rex_user,
+  $rex_grp   = $rex::params::rex_grp,
+  $rex_home   = $rex::params::rex_home,
+  $rex_keys  = $rex::params::rex_keys
 ) {
-
-  hash_resources($rex_keys)
-
+  file { "$rex_home/.ssh":
+    ensure  => directory,
+    mode    => 700,
+    owner   => $rex_user,
+    group   => $rex_grp,
+  } ->
+  file { "$rex_home/.ssh/authorized_keys":
+    ensure  => file,
+    mode    => 600,
+    owner   => $rex_user,
+    group   => $rex_grp,
+    content => template('rex/rex_keys.erb'),
+  }
 }
