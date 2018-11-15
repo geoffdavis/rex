@@ -18,20 +18,10 @@ The purpose of this module is to configure existing Satellite/Foreman systems fo
 
 ## Setup
 
-Import module and publish/promote to appropriate CV/LCE.  Configure overrides overrides for the rex::params class.  The following two are required, any additional can be tweeked to the desired value.
+Import module and publish/promote to appropriate CV/LCE.  Configure overrides overrides for the rex::params class.  The following is required, any additional can be tweeked to the desired value.
 
 ```
-rex_user = <%= @host.params['remote_execution_ssh_user'] %>
-rex_keys = 
----
-ssh_authorized_key:
-  <% for _key in @host.params['remote_execution_ssh_keys'] do -%>
-  <% key = _key.split(' ') -%>
-  <%= key[2] %>:
-    user: <%= @host.params['remote_execution_ssh_user'] %>
-    type: <%= key[0] %>
-    key: <%= key[1] %>
-  <% end -%>
+rex_keys = <% @host.params['remote_execution_ssh_keys'] %>
 ```
 
 Following this, simply enable the rex and rex::params classes on the host[s] or host group[s] of your choosing.
@@ -56,7 +46,7 @@ This module will creat the REX user, if it is not already present and will manag
 
 ### Setup Requirements
 
-The `hash_resources` module must be installed for this module to function correctly.  Additionally, if the desired ssh user for REX is not root, this must be configured prior to enableing this module.
+If the desired ssh user for REX is not root, this must be configured prior to enabling this module.
 
 ### Beginning with rex
 
@@ -66,7 +56,7 @@ The `hash_resources` module must be installed for this module to function correc
 
 ## Usage
 
-Additional user configurable parameters are available via the params class.  These paramaters can be used to manage the REX user's password, set password policies, and the user comments field.
+Additional user configurable parameters are available via the params class. These paramaters can be used to manage the REX user's password, set password policies, and the user comments field.
 
 ## Reference
 
@@ -88,3 +78,4 @@ Contributions welcome!
 0.1.1 - syntax fixes, etc.
 0.1.2 - syntax fixes
 0.2.0 - Removed !requiretty from sudo rule, created manifest to check working dir mount options, and change resources parameter to rex_keys
+0.3.0 - Removed dependency on hash_resources as it was causing parsing issues when updating ruby
