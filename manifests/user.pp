@@ -6,7 +6,10 @@ class rex::user (
   $rex_pw_min	= $rex::params::rex_pw_min,
   $rex_home	= $rex::params::rex_home,
   $rex_comment	= $rex::params::rex_comment) inherits rex::params {
-    user {$rex_user:
+    group { $rex_grp:
+      ensure => present
+    } ->
+    user { $rex_user:
       ensure            => 'present',
       groups            => [$rex_grp],
       managehome        => true,
