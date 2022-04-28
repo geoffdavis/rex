@@ -9,13 +9,13 @@ class rex::ssh_keys(
 ) {
   file { "$rex_home/.ssh":
     ensure  => directory,
-    mode    => 700,
+    mode    => '0700',
     owner   => $rex_user,
     group   => $rex_grp,
   } ->
   file { "$rex_home/.ssh/authorized_keys":
     ensure  => file,
-    mode    => 600,
+    mode    => '0600',
     owner   => $rex_user,
     group   => $rex_grp,
     content => template('rex/rex_keys.erb'),
