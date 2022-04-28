@@ -1,3 +1,4 @@
+# Manage the remote execution user and their home directory.
 class rex::user (
   $rex_user  = $rex::params::rex_user,
   $rex_pw   = $rex::params::rex_pw,

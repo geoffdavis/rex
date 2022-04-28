@@ -1,6 +1,7 @@
-#This  assumes that the satellite/foreman settings are configured for the correct
-#remote execution user.
-
+# Install the Foreman-provided SSH keys in the remote execution user's SSH configuration.
+#
+# This  assumes that the satellite/foreman settings are configured for the correct
+# remote execution user.
 class rex::ssh_keys(
   $rex_user  = $rex::params::rex_user,
   $rex_grp   = $rex::params::rex_grp,

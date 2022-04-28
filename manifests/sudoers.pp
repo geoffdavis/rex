@@ -1,3 +1,4 @@
+# Install a sudoers configuration file for the remote execution user
 class rex::sudoers (
   $res_user  = $rex::params::rex_user,
   $rex_sudo  = '/etc/sudoers.d/rex') inherits rex::params {
