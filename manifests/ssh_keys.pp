@@ -15,10 +15,16 @@ class rex::ssh_keys(
     group  => $rex_grp,
   }
   -> file { "${rex_home}/.ssh/authorized_keys":
-    ensure  => file,
-    mode    => '0600',
-    owner   => $rex_user,
-    group   => $rex_grp,
-    content => template('rex/rex_keys.erb'),
+    ensure => file,
+    mode   => '0600',
+    owner  => $rex_user,
+    group  => $rex_grp,
+    #content => template('rex/rex_keys.erb'),
+  }
+  $rex_keys.each |String $key_name, Hash $params| {
+    ssh_authorized_key { $key_name:
+      *       => $params,
+      require => File["${rex_home}/.ssh/authorized_keys"],
+    }
   }
 }

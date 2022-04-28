@@ -2,15 +2,18 @@
 
 #### Table of Contents
 
-1. [Description](#description)
-1. [Setup - The basics of getting started with rex](#setup)
-    * [What rex affects](#what-rex-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with rex](#beginning-with-rex)
-1. [Usage - Configuration options and additional functionality](#usage)
-1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-1. [Limitations - OS compatibility, etc.](#limitations)
-1. [Development - Guide for contributing to the module](#development)
+- [rex](#rex)
+      - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Setup](#setup)
+    - [What rex affects](#what-rex-affects)
+    - [Setup Requirements](#setup-requirements)
+    - [Beginning with rex](#beginning-with-rex)
+  - [Usage](#usage)
+  - [Reference](#reference)
+  - [Limitations](#limitations)
+  - [Development](#development)
+  - [Release Notes/Contributors/Etc.](#release-notescontributorsetc)
 
 ## Description
 
@@ -21,7 +24,14 @@ The purpose of this module is to configure existing Satellite/Foreman systems fo
 Import module and publish/promote to appropriate CV/LCE.  Configure overrides overrides for the rex::params class.  The following is required, any additional can be tweeked to the desired value.
 
 ```
-rex_keys = <% @host.params['remote_execution_ssh_keys'] %>
+---
+<% for _key in @host.params['remote_execution_ssh_keys'] do -%>
+<% key = _key.split(' ') -%>
+<%= key[2] %>:
+  user: <%= @host.params['remote_execution_ssh_user'] %>
+  type: <%= key[0] %>
+  key: <%= key[1] %>
+<% end -%>
 ```
 
 Following this, simply enable the rex and rex::params classes on the host[s] or host group[s] of your choosing.

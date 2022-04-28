@@ -11,7 +11,7 @@ class rex::params (
   Variant[Integer,String] $rex_pw_max = '99999',
   Variant[Integer,String] $rex_pw_min = '0',
   String $rex_comment = 'REX user for Satellite/Foreman',
-  Array[String] $rex_keys = [],
+  Variant[Array, Struct] $rex_keys = [],
   Stdlib::Absolutepath $rex_dir = '/var/tmp',
 ) {
   include stdlib
