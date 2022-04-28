@@ -12,7 +12,7 @@ class rex::user (
       managehome       => true,
       home             => $rex_home,
       password         => $rex_pw,
-      password_max_age  => $rex_pw_max,
+      password_max_age => $rex_pw_max,
       password_min_age => $rex_pw_min,
       comment          => $rex_comment,
     }
